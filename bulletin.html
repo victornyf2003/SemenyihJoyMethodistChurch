@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Bulletin — Semenyih Joy Methodist Church</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+<div class="topbar">
+<a class="brand" href="index.html">
+<img src="images/joyChapelSemenyih.jpg" alt="Church Logo">
+<span>Semenyih Joy Methodist Church</span>
+</a>
+<nav class="sitenav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">Mission &amp; Vision</a></li>
+<li><a href="bulletin.html" class="active">E-Bulletin</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="member.html">Our Member</a></li>
+<li><a href="offerings.html">Offerings</a></li>
+<li><a href="developer.html">Meet Our Developer</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li class="search-box"><input id="siteSearch" placeholder="Search..."></li>
+<li class="nav-account" id="nav-account-slot"><a href="login.html" class="nav-login-btn">Login</a></li>
+</ul>
+</nav>
+</div>
+<script src="js/search.js"></script>
+<script src="js/nav-auth.js"></script>
+<script src="js/chatbot.js"></script>
+
+<main>
+    <header class="page-header azure">
+        <span class="kicker">E-Bulletin</span>
+        <h1>This week at Semenyih Joy</h1>
+        <p>Announcements, prayer points, and updates from the church family.</p>
+    </header>
+
+    <div class="page-main">
+        <div class="content-block">
+            <h2>Announcements</h2>
+
+            <div class="bulletin-item">
+                <span class="b-date">This Sunday</span>
+                <div>
+                    <h3>Holy Communion Service</h3>
+                    <p>Join us for worship and Holy Communion at the main sanctuary. All are welcome, members and visitors alike.</p>
+                </div>
+            </div>
+
+            <div class="bulletin-item">
+                <span class="b-date">Ongoing</span>
+                <div>
+                    <h3>New Member Registration</h3>
+                    <p>Haven't signed up yet? Reach out to us on the <a href="contact.html">Contact Us</a> page to stay in the loop on services and events.</p>
+                </div>
+            </div>
+
+            <div class="bulletin-item">
+                <span class="b-date">Weekly</span>
+                <div>
+                    <h3>Prayer Meeting</h3>
+                    <p>Our midweek prayer gathering continues — join us to pray for the church and one another.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h2>Prayer Points</h2>
+            <ul>
+                <li>Give thanks for all who joined us in worship this past Sunday.</li>
+                <li>Pray for our children's ministry teachers and small-group leaders.</li>
+                <li>Pray for members who are unwell or unable to join us in person.</li>
+            </ul>
+        </div>
+
+        <div class="footer-home-btn">
+            <a href="index.html">🏠 Back to Home</a>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; <span id="year"></span> Semenyih Joy Methodist Church. Site built by Victor.</p>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

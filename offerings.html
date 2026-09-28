@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offerings — Semenyih Joy Methodist Church</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+<div class="topbar">
+<a class="brand" href="index.html">
+<img src="images/joyChapelSemenyih.jpg" alt="Church Logo">
+<span>Semenyih Joy Methodist Church</span>
+</a>
+<nav class="sitenav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">Mission &amp; Vision</a></li>
+<li><a href="bulletin.html">E-Bulletin</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="member.html">Our Member</a></li>
+<li><a href="offerings.html" class="active">Offerings</a></li>
+<li><a href="developer.html">Meet Our Developer</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li class="search-box"><input id="siteSearch" placeholder="Search..."></li>
+<li class="nav-account" id="nav-account-slot"><a href="login.html" class="nav-login-btn">Login</a></li>
+</ul>
+</nav>
+</div>
+<script src="js/search.js"></script>
+<script src="js/nav-auth.js"></script>
+<script src="js/chatbot.js"></script>
+
+<main>
+    <header class="page-header crimson">
+        <span class="kicker">Offerings</span>
+        <h1>Give with a joyful heart</h1>
+        <p>Your offering supports Sunday worship, children's ministry, and outreach across Semenyih. Every gift, of any size, makes a difference.</p>
+    </header>
+
+    <div class="page-main">
+        <div class="offering-grid">
+            <div class="offering-card">
+                <h3>Sunday Offering</h3>
+                <p>Given during our weekly worship service to support the church's ongoing ministry.</p>
+            </div>
+            <div class="offering-card">
+                <h3>Tithes</h3>
+                <p>Regular giving from members as an act of faith and thanksgiving.</p>
+            </div>
+            <div class="offering-card">
+                <h3>Missions &amp; Outreach</h3>
+                <p>Supports community outreach and mission work beyond our own congregation.</p>
+            </div>
+            <div class="offering-card">
+                <h3>Building Fund</h3>
+                <p>Helps maintain and improve our church facilities for generations to come.</p>
+            </div>
+        </div>
+
+        <div class="giving-panel">
+            <h2>Bank Transfer Details</h2>
+            <p>You can also give directly by bank transfer &mdash; please update these details with your church's real account information.</p>
+            <div class="giving-detail"><span>Account Name</span><span>Semenyih Joy Methodist Church</span></div>
+            <div class="giving-detail"><span>Bank</span><span>Your Bank Name Here</span></div>
+            <div class="giving-detail"><span>Account Number</span><span>0000 0000 0000</span></div>
+            <div class="giving-detail"><span>Reference</span><span>Your Name + Offering</span></div>
+        </div>
+
+        <div class="footer-home-btn">
+            <a href="index.html">🏠 Back to Home</a>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; <span id="year"></span> Semenyih Joy Methodist Church. Site built by Victor.</p>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

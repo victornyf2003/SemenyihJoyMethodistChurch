@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register With Us — Semenyih Joy Methodist Church</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+<div class="topbar">
+<a class="brand" href="index.html">
+<img src="images/joyChapelSemenyih.jpg" alt="Church Logo">
+<span>Semenyih Joy Methodist Church</span>
+</a>
+<nav class="sitenav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">Mission &amp; Vision</a></li>
+<li><a href="bulletin.html">E-Bulletin</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="member.html">Our Member</a></li>
+<li><a href="offerings.html">Offerings</a></li>
+<li><a href="developer.html">Meet Our Developer</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li class="search-box"><input id="siteSearch" placeholder="Search..."></li>
+<li class="nav-account" id="nav-account-slot"><a href="login.html" class="nav-login-btn">Login</a></li>
+</ul>
+</nav>
+</div>
+<script src="js/search.js"></script>
+<script src="js/nav-auth.js"></script>
+<script src="js/chatbot.js"></script>
+
+<main>
+    <header class="reg-header">
+        <span class="kicker">Join Us</span>
+        <h1>Sign Up With Us!</h1>
+        <h3>Create an account and become part of our church community.</h3>
+    </header>
+
+    <div id="registrationView">
+        <form id="registrationForm" class="registrationContainer" novalidate>
+
+            <div class="error-msg" id="form-error" style="margin-bottom:10px;"></div>
+
+            <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <div class="error-msg" id="name-error"></div>
+            </div>
+
+            <div class="field">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" min="1" max="120" required>
+                <div class="error-msg" id="age-error"></div>
+            </div>
+
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <div class="error-msg" id="email-error"></div>
+            </div>
+
+            <div class="field">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+                <div class="error-msg" id="phone-error"></div>
+            </div>
+
+            <div class="field">
+                <label for="member">Are you already a member?</label>
+                <select id="member" name="member">
+                    <option value="">--Select an Option--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="passwordBox">
+                <div class="field">
+                    <label for="password">Create a password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <div class="error-msg" id="password-error"></div>
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm your password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                    <div class="error-msg" id="confirmPassword-error"></div>
+                </div>
+            </div>
+
+            <div class="checkBox">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the Terms &amp; Conditions</label>
+            </div>
+            <div class="error-msg" id="terms-error"></div>
+
+            <div class="form-actions">
+                <button type="submit" id="registerBtn">Register</button>
+                <button type="reset" id="resetBtn">Reset</button>
+            </div>
+
+        </form>
+
+        <p>
+            Prefer to ask first? <a href="contact.html">Contact us</a> and we'll be happy to help.
+        </p>
+    </div>
+
+    <div id="confirmationView" style="display:none;">
+        <div class="confirm-hero">
+            <img src="images/greentick.png" alt="Registration successful">
+            <h1>You're all set!</h1>
+            <h3>Thank you for registering with Semenyih Joy Methodist Church.</h3>
+        </div>
+        <div class="pre-registrationContent">
+            <h2>Registration Summary</h2>
+            <div class="receipt-row"><span>Name</span><strong id="summary-name"></strong></div>
+            <div class="receipt-row"><span>Email</span><strong id="summary-email"></strong></div>
+            <div class="receipt-row"><span>Phone</span><strong id="summary-phone"></strong></div>
+            <div class="receipt-row"><span>Existing member?</span><strong id="summary-member"></strong></div>
+            <p style="margin-top:20px;">We'll be in touch shortly. In the meantime, feel free to explore our upcoming events.</p>
+            <a class="button" href="events.html">See Upcoming Events</a>
+        </div>
+    </div>
+
+    <div class="footer-home-btn">
+        <a href="index.html">🏠 Back to Home</a>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; <span id="year"></span> Semenyih Joy Methodist Church. Site built by Victor.</p>
+</footer>
+
+<script src="js/validation.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

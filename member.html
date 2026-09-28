@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Member — Semenyih Joy Methodist Church</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <style>
+        .member-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .member-card {
+            background: var(--paper);
+            padding: 12px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+        .member-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="topbar">
+<a class="brand" href="index.html">
+<img src="images/joyChapelSemenyih.jpg" alt="Church Logo">
+<span>Semenyih Joy Methodist Church</span>
+</a>
+<nav class="sitenav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">Mission &amp; Vision</a></li>
+<li><a href="bulletin.html">E-Bulletin</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="member.html" class="active">Our Member</a></li>
+<li><a href="offerings.html">Offerings</a></li>
+<li><a href="developer.html">Meet Our Developer</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li class="search-box"><input id="siteSearch" placeholder="Search..."></li>
+<li class="nav-account" id="nav-account-slot"><a href="login.html" class="nav-login-btn">Login</a></li>
+</ul>
+</nav>
+</div>
+<script src="js/search.js"></script>
+<script src="js/nav-auth.js"></script>
+<script src="js/chatbot.js"></script>
+
+<main>
+<header class="page-header violet">
+    <span class="kicker">Our Member</span>
+    <h1>Church Gallery</h1>
+    <p>Meet our church family and view our community moments.</p>
+</header>
+
+<div class="page-main">
+    <div id="member-gallery" class="member-gallery"></div>
+
+    <div class="footer-home-btn">
+        <a href="index.html">🏠 Back to Home</a>
+    </div>
+</div>
+</main>
+
+<script src="js/member-gallery.js"></script>
+
+<footer class="site-footer">
+    <p>&copy; <span id="year"></span> Semenyih Joy Methodist Church. Site built by Victor.</p>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

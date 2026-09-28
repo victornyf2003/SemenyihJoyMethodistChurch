@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Developer — Semenyih Joy Methodist Church</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <style>
+        :root{
+            --dev-deep:#18112d;
+            --dev-purple:#7a4cff;
+            --dev-pink:#ff4fc6;
+            --dev-gold:#ffcb57;
+            --dev-soft:#f6f0ff;
+        }
+        body.dev-page{
+            background:
+                radial-gradient(circle at top left, rgba(122,76,255,.22), transparent 30%),
+                radial-gradient(circle at top right, rgba(255,79,198,.18), transparent 35%),
+                linear-gradient(180deg, #f1e9dc 0%, #efe5d5 100%);
+        }
+        .dev-wrap{
+            width:min(1180px, 92%);
+            margin:0 auto;
+        }
+        .dev-hero{
+            position:relative;
+            overflow:hidden;
+            margin:40px auto 28px;
+            padding:42px;
+            border-radius:36px;
+            background:
+                linear-gradient(135deg, rgba(24,17,45,.96), rgba(63,37,122,.93) 45%, rgba(255,79,198,.83));
+            color:white;
+            box-shadow:0 24px 60px rgba(33, 19, 66, .35);
+            isolation:isolate;
+        }
+        .dev-hero::before{
+            content:"";
+            position:absolute;
+            inset:-10% auto auto -5%;
+            width:260px;
+            height:260px;
+            background:radial-gradient(circle, rgba(255,255,255,.25), transparent 70%);
+            z-index:-1;
+        }
+        .dev-hero::after{
+            content:"";
+            position:absolute;
+            right:-60px;
+            bottom:-80px;
+            width:280px;
+            height:280px;
+            border-radius:50%;
+            background:radial-gradient(circle, rgba(255,203,87,.35), transparent 60%);
+            z-index:-1;
+        }
+        .dev-grid{
+            display:grid;
+            grid-template-columns: 380px 1fr;
+            gap:34px;
+            align-items:center;
+        }
+        .dev-photo-card{
+            position:relative;
+            padding:12px;
+            border-radius:30px;
+            background:linear-gradient(145deg, rgba(255,255,255,.20), rgba(255,255,255,.04));
+            border:1px solid rgba(255,255,255,.22);
+            box-shadow:0 20px 45px rgba(0,0,0,.25);
+            backdrop-filter: blur(8px);
+        }
+        .dev-photo-card::before{
+            content:"VISION • CODE • DREAM • BUILD";
+            position:absolute;
+            top:-14px;
+            left:24px;
+            padding:8px 16px;
+            border-radius:999px;
+            background:linear-gradient(90deg, var(--dev-gold), #fff1b5);
+            color:#2f1d4d;
+            font-size:12px;
+            font-weight:800;
+            letter-spacing:.12em;
+            box-shadow:0 10px 24px rgba(0,0,0,.18);
+        }
+        .dev-photo-card img{
+            display:block;
+            width:100%;
+            height:510px;
+            object-fit:cover;
+            border-radius:24px;
+        }
+        .dev-intro .eyebrow{
+            display:inline-block;
+            padding:10px 16px;
+            border-radius:999px;
+            background:rgba(255,255,255,.12);
+            border:1px solid rgba(255,255,255,.2);
+            font-weight:700;
+            letter-spacing:.08em;
+            text-transform:uppercase;
+            font-size:12px;
+            margin-bottom:16px;
+        }
+        .dev-intro h1{
+            margin:0 0 12px;
+            font-size: clamp(2.7rem, 5vw, 4.6rem);
+            line-height:1;
+            letter-spacing:-.03em;
+        }
+        .dev-intro .subtitle{
+            font-size:1.2rem;
+            margin:0 0 18px;
+            color:#ffeab8;
+            font-weight:700;
+        }
+        .dev-intro p{
+            font-size:1.03rem;
+            line-height:1.8;
+            color:rgba(255,255,255,.92);
+            max-width:660px;
+        }
+        .dev-tags{
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            margin:24px 0 0;
+        }
+        .dev-tags span{
+            padding:12px 18px;
+            border-radius:16px;
+            background:rgba(255,255,255,.10);
+            border:1px solid rgba(255,255,255,.18);
+            font-weight:700;
+            color:#fff;
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
+        }
+        .quote-blast{
+            margin:26px auto 34px;
+            padding:28px 32px;
+            border-radius:30px;
+            background:linear-gradient(120deg, #fff, #fff6fb);
+            border:1px solid rgba(122,76,255,.14);
+            box-shadow:0 18px 40px rgba(76, 52, 133, .10);
+            position:relative;
+        }
+        .quote-blast::before{
+            content:"“";
+            position:absolute;
+            left:18px;
+            top:-14px;
+            font-size:5rem;
+            color:rgba(122,76,255,.14);
+            font-family:Georgia, serif;
+        }
+        .quote-blast p{
+            margin:0;
+            font-size:1.2rem;
+            line-height:1.8;
+            color:#2e2148;
+            font-weight:700;
+            text-align:center;
+        }
+        .quote-blast .credit{
+            display:block;
+            margin-top:10px;
+            text-align:center;
+            color:#7a4cff;
+            font-weight:800;
+            letter-spacing:.06em;
+            text-transform:uppercase;
+            font-size:.85rem;
+        }
+        .dev-showcase{
+            display:grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap:24px;
+            margin:20px auto 18px;
+        }
+        .glass-card{
+            position:relative;
+            padding:28px 24px;
+            border-radius:28px;
+            overflow:hidden;
+            background:rgba(255,255,255,.82);
+            border:1px solid rgba(255,255,255,.7);
+            box-shadow:0 18px 45px rgba(58, 33, 117, .12);
+        }
+        .glass-card::after{
+            content:"";
+            position:absolute;
+            inset:auto -30px -40px auto;
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            background:radial-gradient(circle, rgba(122,76,255,.18), transparent 70%);
+        }
+        .glass-card .icon{
+            font-size:2rem;
+            margin-bottom:14px;
+        }
+        .glass-card h3{
+            margin:0 0 10px;
+            color:#2a134d;
+            font-size:1.4rem;
+        }
+        .glass-card p{
+            margin:0;
+            color:#5a4d71;
+            line-height:1.75;
+        }
+        .crazy-banner{
+            margin:32px auto 16px;
+            padding:24px 28px;
+            border-radius:28px;
+            background:linear-gradient(90deg, #2a134d, #6d26f8, #ff4fc6);
+            color:#fff;
+            box-shadow:0 22px 50px rgba(56, 24, 120, .28);
+            text-align:center;
+        }
+        .crazy-banner h2{color:white !important;
+
+            margin:0 0 8px;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+        }
+        .crazy-banner p{
+            margin:0;
+            font-size:1.05rem;
+            line-height:1.7;
+            color:rgba(255,255,255,.92);
+        }
+        .dev-stats{
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap:18px;
+            margin:26px auto 34px;
+        }
+        .stat{
+            background:#fff;
+            border-radius:24px;
+            padding:24px 18px;
+            text-align:center;
+            box-shadow:0 14px 34px rgba(48, 27, 96, .10);
+            border:1px solid rgba(122,76,255,.12);
+        }
+        .stat strong{
+            display:block;
+            font-size:2rem;
+            color:#2a134d;
+            margin-bottom:8px;
+        }
+        .stat span{
+            color:#6d5a8f;
+            font-weight:700;
+        }
+        .footer-home-btn{
+            width:100%;
+            text-align:center;
+            margin:60px 0 30px;
+        }
+        .footer-home-btn a{
+            display:inline-block;
+            padding:14px 28px;
+            border-radius:999px;
+            background:linear-gradient(90deg, #fff, #fff4dd);
+            text-decoration:none;
+            color:#4b2b5f;
+            box-shadow:0 10px 24px rgba(0,0,0,.08);
+            font-weight:700;
+        }
+        @media (max-width: 980px){
+            .dev-grid{ grid-template-columns:1fr; }
+            .dev-photo-card img{ height:420px; }
+            .dev-showcase{ grid-template-columns:1fr; }
+            .dev-stats{ grid-template-columns:repeat(2, 1fr); }
+        }
+        @media (max-width: 640px){
+            .dev-hero{ padding:24px; border-radius:24px; }
+            .dev-photo-card img{ height:380px; }
+            .dev-stats{ grid-template-columns:1fr; }
+            .quote-blast p{ font-size:1.05rem; }
+        }
+    
+.developer-typing {
+    margin-top: 12px;
+    font-size: 1.15rem;
+    color: #ffeab8;
+    font-weight: 700;
+    min-height: 30px;
+}
+</style>
+
+</head>
+<body class="dev-page">
+
+<div class="topbar">
+<a class="brand" href="index.html">
+<img src="images/joyChapelSemenyih.jpg" alt="Church Logo">
+<span>Semenyih Joy Methodist Church</span>
+</a>
+<nav class="sitenav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">Mission &amp; Vision</a></li>
+<li><a href="bulletin.html">E-Bulletin</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="member.html">Our Member</a></li>
+<li><a href="offerings.html">Offerings</a></li>
+<li><a href="developer.html" class="active">Meet Our Developer</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li class="search-box"><input id="siteSearch" placeholder="Search..."></li>
+<li class="nav-account" id="nav-account-slot"><a href="login.html" class="nav-login-btn">Login</a></li>
+</ul>
+</nav>
+</div>
+<script src="js/search.js"></script>
+<script src="js/nav-auth.js"></script>
+<script src="js/chatbot.js"></script>
+
+<main class="dev-wrap">
+    <section class="dev-hero">
+        <div class="dev-grid">
+            <div class="dev-photo-card">
+                <img src="images/developer-victor.jpg" alt="Photo of Victor">
+            </div>
+            <div class="dev-intro">
+                <span class="eyebrow">Meet Our Developer</span>
+                <h1>Victor</h1>
+                <p class="subtitle">Software Engineer • Builder • Dream Chaser</p><div class="developer-typing" id="developer-typing"></div>
+                <p>
+                    This page is a spotlight for the mind behind the code. Victor is currently working as a
+                    <strong>Software Engineer at Xin Hwa Supply Chain Sdn. Bhd.</strong> and is also pursuing a
+                    <strong>Bachelor of Software Engineering (Honours)</strong>. He is passionate about turning ideas
+                    into real, meaningful digital experiences that people can actually use and enjoy.
+                </p>
+                <div class="dev-tags">
+                    <span>🚀 Software Engineering</span>
+                    <span>📱 React Native Projects</span>
+                    <span>🎓 Bachelor of Software Engineering (Honours)</span>
+                    <span>🎧 Diploma in Audio System Engineering</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-blast">
+        <p>
+            Time creates memories. Appreciate what you have and reach your dream one step at time.
+        </p>
+        <span class="credit">Quote by Victor</span>
+    </section>
+
+    <section class="crazy-banner">
+        <h2>Built Different. Dreaming Bigger. Engineering Tomorrow.</h2>
+        <p>
+            Not just a developer — Victor is a creator who mixes technology, ambition, and artistic curiosity into
+            one journey. The goal is simple: keep learning, keep building, and keep leveling up.
+        </p>
+    </section>
+
+    <section class="dev-stats">
+        <div class="stat">
+            <strong>2+</strong>
+            <span>Fields of Study</span>
+        </div>
+        <div class="stat">
+            <strong>1</strong>
+            <span>Current Engineering Career</span>
+        </div>
+        <div class="stat">
+            <strong>∞</strong>
+            <span>Growth Mindset</span>
+        </div>
+        <div class="stat">
+            <strong>24/7</strong>
+            <span>Dream Builder Energy</span>
+        </div>
+    </section>
+
+    <section class="dev-showcase">
+        <article class="glass-card">
+            <div class="icon">💼</div>
+            <h3>Professional Journey</h3>
+            <p>
+                Victor is currently contributing in the tech space as a Software Engineer at
+                <strong>Xin Hwa Supply Chain Sdn. Bhd.</strong>, building solutions with practical value and growing
+                through real-world experience in software development.
+            </p>
+        </article>
+
+        <article class="glass-card">
+            <div class="icon">📚</div>
+            <h3>Academic Path</h3>
+            <p>
+                While working professionally, he is also studying for a
+                <strong>Bachelor of Software Engineering (Honours)</strong>, showing a strong commitment to both
+                discipline and continuous self-improvement.
+            </p>
+        </article>
+
+        <article class="glass-card">
+            <div class="icon">🔥</div>
+            <h3>Projects & Passion</h3>
+            <p>
+                Victor has developed multiple projects, including a
+                <strong>React Native note-taking application</strong>. Beyond software, he also side-hustles in
+                learning through a <strong>Diploma in Audio System Engineering</strong>, blending technical skill with
+                creative exploration.
+            </p>
+        </article>
+    </section>
+
+    <footer class="footer-home-btn">
+        <a href="index.html">🏠 Back to Home</a>
+    </footer>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; <span id="year"></span> Semenyih Joy Methodist Church. Site built by Victor.</p>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+
+<script>
+const words = [
+"Creating solutions.",
+"Building applications.",
+"Engineering tomorrow.",
+"Turning ideas into reality."
+];
+
+let i = 0;
+let j = 0;
+let current = "";
+
+function typeDeveloperText(){
+    const box = document.getElementById("developer-typing");
+    if(!box) return;
+
+    if(j < words[i].length){
+        current += words[i][j];
+        box.textContent = current;
+        j++;
+        setTimeout(typeDeveloperText, 80);
+    } else {
+        setTimeout(()=>{
+            current="";
+            j=0;
+            i=(i+1)%words.length;
+            typeDeveloperText();
+        },1200);
+    }
+}
+typeDeveloperText();
+</script>
+
+</body>
+
+</html>

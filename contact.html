@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Semenyih Joy Methodist Church</title>
+<link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+<div class="topbar">
+<a class="brand" href="index.html">
+<img src="images/joyChapelSemenyih.jpg" alt="Church Logo">
+<span>Semenyih Joy Methodist Church</span>
+</a>
+<nav class="sitenav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">Mission &amp; Vision</a></li>
+<li><a href="bulletin.html">E-Bulletin</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="member.html">Our Member</a></li>
+<li><a href="offerings.html">Offerings</a></li>
+<li><a href="developer.html">Meet Our Developer</a></li>
+<li><a href="contact.html" class="active">Contact Us</a></li>
+<li class="search-box"><input id="siteSearch" placeholder="Search..."></li>
+<li class="nav-account" id="nav-account-slot"><a href="login.html" class="nav-login-btn">Login</a></li>
+</ul>
+</nav>
+</div>
+<script src="js/search.js"></script>
+<script src="js/nav-auth.js"></script>
+<script src="js/chatbot.js"></script>
+
+<main>
+<div class="contact-container">
+<h1>Contact Us</h1>
+<p>We welcome you to connect with Semenyih Joy Methodist Church.</p>
+
+<div id="success" class="success-message">
+Thank you! Your message has been received.
+</div>
+
+<div class="contact-grid">
+
+<div>
+<h2>Our Contact Information</h2>
+<p><strong>Email:</strong> church@example.com</p>
+<p><strong>Phone:</strong> +60 3-1234 5678</p>
+<p><strong>Address:</strong> Semenyih, Selangor, Malaysia</p>
+
+<h2>Our Location</h2>
+<iframe class="contact-map" loading="lazy"
+src="https://maps.google.com/maps?q=Semenyih%20Joy%20Methodist%20Church&output=embed">
+</iframe>
+</div>
+
+<div>
+<h2>Send Us an Inquiry</h2>
+
+<form class="contact-form" id="contactForm">
+<label for="name">Name</label>
+<input id="name" placeholder="Enter your name">
+
+<label for="email">Email</label>
+<input id="email" type="email" placeholder="Enter your email">
+
+<label for="subject">Subject</label>
+<input id="subject" placeholder="What is this about?">
+
+<label for="message">Message</label>
+<textarea id="message" rows="6" placeholder="Write your message here"></textarea>
+
+<button type="submit">Submit Inquiry</button>
+</form>
+
+</div>
+
+</div>
+</div>
+
+<div class="footer-home-btn">
+<a href="index.html">🏠 Back to Home</a>
+</div>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; <span id="year"></span> Semenyih Joy Methodist Church. Site built by Victor.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let subject = document.getElementById("subject").value.trim();
+  let message = document.getElementById("message").value.trim();
+
+  if(!name || !email || !subject || !message){
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  document.getElementById("success").style.display = "block";
+  document.getElementById("success").scrollIntoView({behavior:"smooth", block:"center"});
+  this.reset();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events — Semenyih Joy Methodist Church</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+<div class="topbar">
+<a class="brand" href="index.html">
+<img src="images/joyChapelSemenyih.jpg" alt="Church Logo">
+<span>Semenyih Joy Methodist Church</span>
+</a>
+<nav class="sitenav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">Mission &amp; Vision</a></li>
+<li><a href="bulletin.html">E-Bulletin</a></li>
+<li><a href="events.html" class="active">Events</a></li>
+<li><a href="member.html">Our Member</a></li>
+<li><a href="offerings.html">Offerings</a></li>
+<li><a href="developer.html">Meet Our Developer</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li class="search-box"><input id="siteSearch" placeholder="Search..."></li>
+<li class="nav-account" id="nav-account-slot"><a href="login.html" class="nav-login-btn">Login</a></li>
+</ul>
+</nav>
+</div>
+<script src="js/search.js"></script>
+<script src="js/nav-auth.js"></script>
+<script src="js/chatbot.js"></script>
+
+<main>
+    <header class="page-header marigold">
+        <span class="kicker">Events</span>
+        <h1>What's coming up</h1>
+        <p>From Sunday worship to community outreach — here's what's happening at Semenyih Joy.</p>
+    </header>
+
+    <div class="page-main">
+        <div class="content-block">
+            <h2>Upcoming Events</h2>
+
+            <div class="event-card">
+                <div class="event-date"><span class="d-num">14</span><span class="d-mon">SEP</span></div>
+                <div class="event-body">
+                    <h3>Sunday Worship &amp; Holy Communion</h3>
+                    <p class="e-time">9:00 AM &mdash; Main Sanctuary</p>
+                    <p>Our weekly gathering for worship, the Word, and Holy Communion. Everyone is welcome.</p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date"><span class="d-num">20</span><span class="d-mon">SEP</span></div>
+                <div class="event-body">
+                    <h3>Children's Ministry Family Day</h3>
+                    <p class="e-time">10:00 AM &mdash; Fellowship Hall</p>
+                    <p>Games, singing, and small-group fellowship for children and their families.</p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date"><span class="d-num">27</span><span class="d-mon">SEP</span></div>
+                <div class="event-body">
+                    <h3>New Member Welcome Tea</h3>
+                    <p class="e-time">11:30 AM &mdash; Church Foyer</p>
+                    <p>A chance for recently registered members and visitors to meet the church family.</p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date"><span class="d-num">04</span><span class="d-mon">OCT</span></div>
+                <div class="event-body">
+                    <h3>Community Outreach</h3>
+                    <p class="e-time">9:00 AM &mdash; Semenyih Town Centre</p>
+                    <p>Serving our wider community with practical care and encouragement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-home-btn">
+            <a href="index.html">🏠 Back to Home</a>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; <span id="year"></span> Semenyih Joy Methodist Church. Site built by Victor.</p>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

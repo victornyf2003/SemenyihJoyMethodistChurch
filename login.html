@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Semenyih Joy Methodist Church</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+<div class="topbar">
+<a class="brand" href="index.html">
+<img src="images/joyChapelSemenyih.jpg" alt="Church Logo">
+<span>Semenyih Joy Methodist Church</span>
+</a>
+<nav class="sitenav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about-us.html">Mission &amp; Vision</a></li>
+<li><a href="bulletin.html">E-Bulletin</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="member.html">Our Member</a></li>
+<li><a href="offerings.html">Offerings</a></li>
+<li><a href="developer.html">Meet Our Developer</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+<li class="search-box"><input id="siteSearch" placeholder="Search..."></li>
+<li class="nav-account" id="nav-account-slot"><a href="login.html" class="nav-login-btn active">Login</a></li>
+</ul>
+</nav>
+</div>
+<script src="js/search.js"></script>
+<script src="js/nav-auth.js"></script>
+<script src="js/chatbot.js"></script>
+
+<main>
+    <div class="login-wrapper">
+        <h1>Welcome Back</h1>
+        <p>Log in to your Semenyih Joy Methodist Church account.</p>
+
+        <div class="login-card">
+            <div id="login-error" class="error-msg" style="margin-bottom:10px;"></div>
+
+            <form id="loginForm" novalidate>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" id="loginBtn">Log In</button>
+            </form>
+
+            <p>Don't have an account yet? <a href="registration.html">Register here</a></p>
+        </div>
+
+        <div class="footer-home-btn">
+            <a href="index.html">🏠 Back to Home</a>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <p>&copy; <span id="year"></span> Semenyih Joy Methodist Church. Site built by Victor.</p>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const errorBox = document.getElementById("login-error");
+  const btn = document.getElementById("loginBtn");
+  errorBox.textContent = "";
+
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
+
+  if (!email || !password) {
+    errorBox.textContent = "Please enter both your email and password.";
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Logging in…";
+
+  fetch("login.php", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password })
+  })
+  .then(async (r) => {
+    let data;
+    try { data = await r.json(); } catch { data = null; }
+    if (!r.ok || !data || !data.success) {
+      throw new Error((data && data.message) || "We couldn't sign you in with that email/password.");
+    }
+    window.location.href = "index.html";
+  })
+  .catch((err) => {
+    errorBox.textContent = err.message.includes("Failed to fetch")
+      ? "Couldn't reach the server. This page needs to be running on a PHP + MySQL server (see README)."
+      : err.message;
+    btn.disabled = false;
+    btn.textContent = "Log In";
+  });
+});
+</script>
+
+</body>
+</html>
